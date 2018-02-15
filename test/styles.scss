@@ -1,0 +1,75 @@
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+@import '../ed-grid';
+
+$bp-menu: 900px;
+
+
+.main-menu {
+
+
+
+	@include edMenu($bp-menu);
+
+	li {
+
+		background: seagreen; 
+
+		border-bottom: 1px solid rgba(#fff,0.2);
+
+		
+
+
+		@include from($bp-menu) {
+
+			border-right: 1px solid rgba(#fff,0.2);
+
+				&:hover {
+			
+				background: darken(seagreen,6);
+
+			}
+
+		}
+
+
+	}
+
+
+
+	a {
+
+		color: #fff;
+	}
+
+
+
+}
+
+
+.main-nav {
+
+	@include edNav(left,$bp-menu);
+	background: seagreen;
+
+	margin-top: .5em;
+
+}
+
+
+
+.nav-toggle {
+
+	@include navToggle(15px, darken(seagreen,6));
+	@include showTo($bp-menu);
+
+	margin-top: .5em;
+	margin-bottom: .5em;
+
+}
+
+.expand-submenu {
+
+	color: white;
+}
